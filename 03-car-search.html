@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car</title>
+  </head>
+  <body>
+    <p><a href="./index.html">Main page</a></p>
+
+    <form action="submit" class="js-form car-search">
+      <div class="car-group">
+        <input type="text" name="query" class="car-input" placeholder="Model" />
+      </div>
+      <div class="car-group">
+        <select name="options" class="car-select">
+          <option value="car">Mark</option>
+          <option value="type">Model</option>
+        </select>
+      </div>
+      <button class="car-button">Search</button>
+    </form>
+    <ul class="js-list car-list"></ul>
+
+    <script src="./js/03-car-search.js" type="module"></script>
+  </body>
+</html>
