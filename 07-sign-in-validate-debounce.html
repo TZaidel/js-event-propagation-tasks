@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/basicLightbox/5.0.0/basicLightbox.min.css"
+    />
+    <link rel="stylesheet" href="./css/sign-in-form.css" />
+    <title>Sign in</title>
+  </head>
+  <body>
+    <p><a href="./index.html">Main page</a></p>
+
+    <form action="#" id="inputForm">
+      <fieldset>
+        <legend>Sign in</legend>
+        <label>Enter your login</label>
+        <input
+          type="text"
+          id="loginInput"
+          data-min-length="3"
+          data-max-length="10"
+        />
+        <label>Enter your password</label>
+        <input
+          type="password"
+          id="passwordInput"
+          data-min-length="6"
+          data-max-length="12"
+        />
+      </fieldset>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="./js/07-sign-in-validate-debounce.js"></script>
+  </body>
+</html>

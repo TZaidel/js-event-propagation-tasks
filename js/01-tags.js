@@ -42,21 +42,23 @@
 //     console.log(selectedBtn)
 // }
 
-
 const list = document.querySelector('.js-tags')
 
 list.addEventListener('click', onClick)
-
+const selectedTags = new Set()
 function onClick(event) {
-    if (event.target.nodeName !== "BUTTON") {
+    if (event.target.nodeName !== "BUTTON"){
         return
     }
-    const currentActiveBtn = document.querySelector('.tags__btn--active')
+    
+    if (event.target.classList.contains('tags__btn--active')) {
+        selectedTags.delete(event.target.dataset.value)
+    } else {
+            selectedTags.add(event.target.dataset.value)
 
-    currentActiveBtn?.classList.remove('tags__btn--active')
+    }
+    event.target.classList.toggle('tags__btn--active')
 
-    event.target.classList.add('tags__btn--active')   
-    // const selectedTags = document.createElement('p')
-    // selectedTags.textContent = `${event.target.dataset.value} + `
-    // list.append(selectedTags)
+    console.log(selectedTags)
+
 }

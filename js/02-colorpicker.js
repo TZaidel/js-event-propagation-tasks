@@ -35,53 +35,55 @@ function createColorMarkup(colors) {
 }
 
 container.insertAdjacentHTML('beforeend', markup)
-
 container.addEventListener('click', onContainerClick)
 
-// function onContainerClick(evt) {
-//     if (!evt.target.classList.contains('color-swatch')) {
-//         return
-//     } 
-    
-//     const currentActiveCard = document.querySelector('.is-active')
-//     if (currentActiveCard) {
-//     currentActiveCard.classList.remove('is-active')
-//     }
-    
-//     const swatchEl = evt.target
-//     const parentSwatch = swatchEl.closest('.color-card')
-//     parentSwatch.classList.add('is-active')
-//     console.log(evt.target)
 
-//     document.body.style.backgroundColor = evt.target.dataset.hex
+// function onContainerClick(event) {
+//   if (!event.target.classList.contains('color-swatch')) {
+//     return
+//   }
+//   const currentActiveCard = document.querySelector('.is-active')
+
+
+//   const closestCard = event.target.closest('.color-card')
+//   closestCard.classList.add('is-active')
+//   document.body.style.backgroundColor = event.target.dataset.hex
+
+//   if (currentActiveCard) {
+//     currentActiveCard.classList.remove('is-active')
+//   }
+//   console.log(closestCard)
 // }
 
-//-----------------поділено на окремі ф-ції
-function onContainerClick(evt) {
-    if (!evt.target.classList.contains('color-swatch')) {
-        return
-    } 
-    
-    const swatchEl = evt.target
-    const parentSwatch = swatchEl.closest('.color-card')
 
-    removeActiveCardClass()
-    addActiveClass(parentSwatch)
-    setColor(evt.target.dataset.hex)
+
+
+//!-----------------поділено на окремі ф-ції
+function onContainerClick(event) {
+  if (!event.target.classList.contains('color-swatch')) {
+    return
+  }
+
+  const closestCard = event.target.closest('.color-card')
+  
+    removeActiveClass()
+    addActiveClass(closestCard)
+    changeBgColor(event.target.dataset.hex)
+
 }
 
-function removeActiveCardClass() {
-        const currentActiveCard = document.querySelector('.is-active')
-    if (currentActiveCard) {
-    currentActiveCard.classList.remove('is-active')
-    }
+function changeBgColor(color) {
+    document.body.style.backgroundColor = color
 }
 
 function addActiveClass(card) {
-        card.classList.add('is-active')
-
+  card.classList.add('is-active')
 }
 
-function setColor(color) {
-                document.body.style.backgroundColor = color
+function removeActiveClass() {
+      const currentActiveCard = document.querySelector('.is-active')
+
+    if (currentActiveCard) {
+    currentActiveCard.classList.remove('is-active')
+  }
 }

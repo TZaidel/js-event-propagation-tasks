@@ -43,24 +43,32 @@ const cars = [
   },
 ]
 
+
+
 const form = document.querySelector('.js-form')
 const carName = document.querySelector('.car-input')
 const list = document.querySelector('.js-list')
 
-function makeCar(cars) {
-   return  cars.map(({ id, type, car, price, img }) => {
-        return `<li><img style = "width: 300px" src = "${img}"><h2>${car}</h2><h3>${type}</h3><p>${price}</p></li>`
-    }).join('')
-    
+function makeCarList(car) {
+  return car.map(({ id, car, type, price, img }) => {
+    return `<li > <img style = "width: 300px" src= "${img}"> <h2>${car}</h2><h3>${type}</h3><p>
+    ${price}</p></li>`
+  }).join('')
 }
-list.innerHTML = makeCar(cars)
+
+list.innerHTML = makeCarList(cars)
+
 
 form.addEventListener('submit', onSubmit)
 
 function onSubmit(event) {
-    event.preventDefault()
+  event.preventDefault() 
+  console.log(event.currentTarget.elements)
+  console.log(event.target.elements)
+  console.log(event.target.elements.options)
+console.log(event.target.elements.query)
 
-    const result = cars.filter(car => car[event.target.elements.options.value].toLowerCase().includes(event.target.elements.query.value.toLowerCase()))
-    
-list.innerHTML= makeCar(result)
+ const result = cars.filter(car=> car[event.target.elements.options.value].toLowerCase().includes(event.target.elements.query.value.toLowerCase()))
+  
+  list.innerHTML = makeCarList(result)
 }

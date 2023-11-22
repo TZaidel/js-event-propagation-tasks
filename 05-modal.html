@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <title>Modal</title>
+  </head>
+  <body>
+    <p><a href="./index.html">Main page</a></p>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="modal-window theme">
+      <form id="form">
+        <input type="text" name="email" placeholder="Email" />
+        <input type="password" name="password" placeholder="Password" />
+        <textarea name="comment" placeholder="Comment"></textarea>
+        <input type="checkbox" class="checkbox" />
+        <button type="submit" class="submit-btn" disabled>Submit</button>
+        <button class="close-btn" id="closeModalBtn">close</button>
+      </form>
+    </div>
+
+    <button class="open-modal-btn theme" id="openModalBtn">Open modal</button>
+
+    <script src="./js/05-modal.js" type="module"></script>
+  </body>
+</html>

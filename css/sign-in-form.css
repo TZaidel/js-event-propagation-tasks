@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 500vh;
+  font-family: sans-serif;
+}
+
+.input {
+  display: inline-block;
+  margin: 30px;
+}
+
+form {
+  width: 200px;
+  margin-left: 50px;
+  text-align: center;
+}
+
+legend {
+  font-size: 30px;
+}
+fieldset {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.141);
+  border-color: #f4c003;
+  padding: 10px;
+}
+
+form label {
+  display: block;
+  margin: 10px;
+}
+
+form label input {
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 5px;
+  border-color: #f4c003;
+  outline: none;
+}
+
+.wrong {
+  border-color: red;
+}
+.correct {
+  border-color: green;
+}
